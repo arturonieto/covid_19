@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
 
   def index
-    @time = Time.now
+    @time = Date.today.strftime '%m-%d-%Y'
   end
 end
