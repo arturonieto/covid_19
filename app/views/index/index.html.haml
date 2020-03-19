@@ -1,1 +1,23 @@
-%strong= @time
+
+
+- @covid_19_cases[:cases_per_country].each do |country, cases_information|
+  - if cases_information[:has_many]
+    %h3=country
+    %p Cases found per region
+    %br
+    - cases_information.each do |region, info|
+      - next if region == :has_many
+      %p= region
+      %p= "Last updated ---- #{info[:last_update]}"
+      %p= "Confirmed ------- #{info[:confirmed]}"
+      %p= "Recovered ------- #{info[:recovered]}"
+      %p= "Deaths ----------- #{info[:deaths]}"
+  - else
+    %h3=country
+    %p= "Last updated ---- #{cases_information[:last_update]}"
+    %p= "Confirmed ------- #{cases_information[:confirmed]}"
+    %p= "Recovered ------- #{cases_information[:recovered]}"
+    %p= "Deaths ----------- #{cases_information[:deaths]}"
+  
+  %br
+  %br
