@@ -9,6 +9,8 @@ gem 'rails', '~> 6.0.0'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use haml for templates
 gem 'haml'
+# Use html2haml to convert templates
+gem 'html2haml'
 # Use Puma as the app server
 gem 'puma', '>= 3.12.4'
 # Use SCSS for stylesheets
