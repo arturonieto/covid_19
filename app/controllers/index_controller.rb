@@ -14,7 +14,7 @@ class IndexController < ApplicationController
     req.use_ssl = true
     res         = req.request_head(parsed_url.path)
     
-    res.code == "200" ? ( @covid_19_cases = read_covid_19 parsed_url.to_s ) : ( @covid_19_cases = read_covid_19 parsed_url.to_s.gsub!(/[0-2][0-9]-[0-3][0-9]-[12]\d{3}/, yesterday) )
+    res.code == "200" ? ( @covid_19_cases = read_from_url parsed_url.to_s ) : ( @covid_19_cases = read_from_url parsed_url.to_s.gsub!(/[0-2][0-9]-[0-3][0-9]-[12]\d{3}/, yesterday) )
   
   end
   
