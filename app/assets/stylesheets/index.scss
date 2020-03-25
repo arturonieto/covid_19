@@ -1,3 +1,21 @@
 // Place all the styles related to the index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.index_index{
+  .blablabla{
+    .container{
+      .country_container{
+        margin: 20px;
+        border: 1px solid black;
+        .city_container{
+          border: 5px solid green;
+          margin: 2em;
+          .nebh_container{
+            border: 2px solid blue;
+            margin: 2em;
+          }
+        }
+      }
+    }
+  }
+}

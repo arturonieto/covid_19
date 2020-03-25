@@ -2,24 +2,41 @@
 .index_index
   .blablabla
     .container
-      - @covid_19_cases[:data].each do |country, cases_information|
-        - if cases_information[:has_many]
-          %h3=country
-          %p Cases found per region
-          %br
-          - cases_information.each do |region, info|
-            - next if region == :has_many
-            %p= region
-            %p= "Last updated ---- #{info[:last_update]}"
-            %p= "Confirmed ------- #{info[:confirmed]}"
-            %p= "Recovered ------- #{info[:recovered]}"
-            %p= "Deaths ----------- #{info[:deaths]}"
-        - else
-          %h3=country
-          %p= "Last updated ---- #{cases_information[:last_update]}"
-          %p= "Confirmed ------- #{cases_information[:confirmed]}"
-          %p= "Recovered ------- #{cases_information[:recovered]}"
-          %p= "Deaths ----------- #{cases_information[:deaths]}"
+      - @ndx_hash.each do |key, value|
+        .country_container
+          .row
+            .col-md-12
+              %p.text-center= key.inspect
+          - value.each do |key2, value2|
+            - if value2.class.name == 'Hash'
+              .city_container
+                .row
+                  .col-md-12
+                    %p.text-center= key2.inspect
+                - value2.each do |key3, value3|
+                  - if value3.class.name == 'Hash'
+                    .nebh_container
+                      .row
+                        .col-md-12
+                          %p.text-center= key3.inspect
+                      - value3.each do |key4, value4|
+                        .row
+                          .col-md-6
+                            %p.text-center= key4.inspect
+                          .col-md-6
+                            %p.text-center= value4.inspect
+                  - else
+                    .row
+                      .col-md-6
+                        %p.text-center= key3.inspect
+                      .col-md-6
+                        %p.text-center= value3.inspect
+            - else
+              .row
+                .col-md-6
+                  %p.text-center= key2.inspect
+                .col-md-6
+                  %p.text-center= value2.inspect
+        - break
         
-        %br
-        %br
+      

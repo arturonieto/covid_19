@@ -11,6 +11,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'haml'
 # Use html2haml to convert templates
 gem 'html2haml'
+# Create graphs
+gem 'chartkick'
 # Use Puma as the app server
 gem 'puma', '>= 3.12.4'
 # Use SCSS for stylesheets
