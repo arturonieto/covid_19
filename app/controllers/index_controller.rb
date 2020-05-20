@@ -3,6 +3,7 @@ class IndexController < ApplicationController
   include CsvProcessor
   
   def index
+=begin 
     @time      = Date.today.strftime '%m-%d-%Y'
     @remote_ip = request.remote_ip
     @ndx_hash  = {}
@@ -52,7 +53,7 @@ class IndexController < ApplicationController
       end
       
     end
-
+=end
   end
   
 end
