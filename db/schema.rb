@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_05_20_015605) do
 
   create_table "daily_reports", force: :cascade do |t|
     t.bigint "country_id", null: false
-    t.bigint "region_id", null: false
-    t.bigint "suburb_id", null: false
+    t.bigint "region_id"
+    t.bigint "suburb_id"
     t.datetime "date"
     t.integer "confirmed"
     t.integer "deaths"
